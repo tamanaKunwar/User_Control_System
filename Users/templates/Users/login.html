@@ -1,0 +1,16 @@
+<html>
+<head>
+        </title>
+        Login Page
+    </title>
+    </head>
+<body>
+    <h2>Login page</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit"> Login </button>
+    </form>
+    <small class="text-muted">Need An Account?<a class="ml-2" href="{% url 'signup' %}">Sign Up</a></small>
+</body>
+</html>

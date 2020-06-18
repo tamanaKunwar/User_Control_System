@@ -1,0 +1,16 @@
+<html>
+<head>
+        </title>
+        Sign up
+    </title>
+    </head>
+<body>
+    <h2>Welcome, Please sign up by providing below details</h2>
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <button type="submit"> Sign Up </button>
+    </form>
+    <small class="text-muted">Already Have An Account?<a class="ml-2" href="{% url 'login' %}">Login</a></small>
+</body>
+</html>
