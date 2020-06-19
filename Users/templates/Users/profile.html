@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> Welcome </title>
-</head>
-<body>
-    <H1> all profiles are shown below</H1>
-    <p class="article-content">{{all}}</p>
+{% extends "Users/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <H1> All profiles are shown below</H1>
+    <form method="post" action="{% url 'delete'%}">
+        {% csrf_token %}
+    <select name="all_users">
+        {% for i in name %}
+            <option value="{{i}}">{{i}}</option>
+        {% endfor %}
+    </select><br><br><br>
+    <input  type = "submit" value="Delete">
+    </form>
     <a class="ml-2" href="{% url 'logout' %}">Logout</a></small>
-</body>
-</html>
+{% endblock %}

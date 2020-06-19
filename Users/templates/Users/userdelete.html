@@ -1,0 +1,5 @@
+{% extends "Users/base.html" %}
+{% block content %}
+    <h1> Are you sure you want to delete it {{object}}? </h1>
+    <p> <input type="submit" value="Yes"/> <a href="{% url 'profile' %}" > Cancel</a></p>
+{% endblock %}
